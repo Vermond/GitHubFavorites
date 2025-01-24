@@ -1,21 +1,11 @@
-//
-//  README.md
-//  GitHubFavorites
-//
-//  Created by Jinsu Gu on 1/22/25.
-//
+README
 
-GitHub API 이용하여 remote에서 사용자 검색
-즐겨찾기 관리 (로컬 스토리지 활용)
-로컬 즐겨찾기 목록에서 사용자 검색
+https://github.com/Vermond/GitHubFavorites
 
-프로필 이미지
-사용자 이름
-즐겨찾기 여부
-즐겨찾기 추가/삭제 (바로 반영 필요)
+기능
+- 깃헙 유저 검색 (이름으로)
+- 즐겨찾기 저장, 관리 (CoreData)
 
-로컬 즐겨찾기 한정
-사용자 이름순 정렬
-이름 맨 앞글자 기준 헤더 출력
+[구조 설명](Doc/Structure.md)
 
-검색 사용자 이름만!
+[개선 목록](Doc/ToBeList.md)

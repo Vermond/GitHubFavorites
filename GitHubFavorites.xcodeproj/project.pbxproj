@@ -33,6 +33,7 @@
 		74A182002D40811F007AD804 /* GitHubFavorites.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubFavorites.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A182192D408121007AD804 /* GitHubFavoritesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubFavoritesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A182232D408121007AD804 /* GitHubFavoritesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubFavoritesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDDD93552D43E6EA005A7A25 /* Structure.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Structure.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -125,6 +126,7 @@
 		EDDD93542D43E5C3005A7A25 /* Doc */ = {
 			isa = PBXGroup;
 			children = (
+				EDDD93552D43E6EA005A7A25 /* Structure.md */,
 			);
 			path = Doc;
 			sourceTree = "<group>";
