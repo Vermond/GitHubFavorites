@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
-class FavoriteSearchVC: UIViewController {    
+class FavoriteSearchVC: UIViewController {
+    @IBOutlet weak private var searchText: UITextField!
     @IBOutlet weak var contentsView: UITableView!
 }
