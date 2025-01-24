@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SimpleUserCell" customModule="GitHubFavorites" customModuleProvider="target">
+            <connections>
+                <outlet property="favoriteButton" destination="eVG-96-tzz" id="40b-SX-PWx"/>
+                <outlet property="profileImage" destination="JkY-Yr-00p" id="NdL-8T-9Zz"/>
+                <outlet property="userNameLabel" destination="Omo-nt-vtO" id="pYm-OP-hLb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="573" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVG-96-tzz" customClass="FavoriteButton" customModule="GitHubFavorites" customModuleProvider="target">
+                    <rect key="frame" x="483" y="10" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="eVG-96-tzz" secondAttribute="height" multiplier="1:1" id="UCV-pc-rlA"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="xz9-ej-Aqx"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omo-nt-vtO">
+                    <rect key="frame" x="100" y="0.0" width="373" height="100"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="JkY-Yr-00p">
+                    <rect key="frame" x="10" y="10" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="JkY-Yr-00p" secondAttribute="height" multiplier="1:1" id="tik-UC-yTQ"/>
+                        <constraint firstAttribute="height" constant="80" id="uFW-T7-Fyf"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="JkY-Yr-00p" secondAttribute="bottom" constant="10" id="6qx-7f-elg"/>
+                <constraint firstItem="Omo-nt-vtO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ATv-0h-IYR"/>
+                <constraint firstItem="JkY-Yr-00p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Dsh-yD-blk"/>
+                <constraint firstItem="eVG-96-tzz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="MJT-Wz-6eS"/>
+                <constraint firstItem="Omo-nt-vtO" firstAttribute="leading" secondItem="JkY-Yr-00p" secondAttribute="trailing" constant="10" id="RNn-wg-7jY"/>
+                <constraint firstAttribute="bottom" secondItem="eVG-96-tzz" secondAttribute="bottom" constant="10" id="TeH-BJ-nhF"/>
+                <constraint firstAttribute="trailing" secondItem="eVG-96-tzz" secondAttribute="trailing" constant="10" id="XUp-4i-Bbr"/>
+                <constraint firstItem="eVG-96-tzz" firstAttribute="leading" secondItem="Omo-nt-vtO" secondAttribute="trailing" constant="10" id="eNx-9q-UDa"/>
+                <constraint firstItem="JkY-Yr-00p" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="eeO-VI-1oF"/>
+                <constraint firstAttribute="bottom" secondItem="Omo-nt-vtO" secondAttribute="bottom" id="sMe-r7-cxv"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="209.92366412213741" y="-222.53521126760563"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

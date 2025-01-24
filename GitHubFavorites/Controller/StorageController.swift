@@ -25,10 +25,11 @@ class StorageController {
         return persistentContainer.viewContext
     }
     
-    func createUserData(name: String, imgPath: String) {
+    func createUserData(userId: Int64, name: String, imgPath: String) {
         let context = self.context
         
         let data = UserData(context: context)
+        data.userId = userId
         data.userName = name
         data.imgPath = imgPath
         
@@ -42,6 +43,34 @@ class StorageController {
     func fetchUserData() -> [UserData] {
         let context = self.context
         let request: NSFetchRequest<UserData> = UserData.fetchRequest()
+        
+        do {
+            return try context.fetch(request)
+        } catch {
+            print("Failed to fetch user data: \(error.localizedDescription)")
+            return []
+        }
+    }
+    
+    func fetchUserData(withId userId: Int64) -> [UserData] {
+        let context = self.context
+        let request: NSFetchRequest<UserData> = UserData.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "userId == %d", userId)
+        
+        do {
+            return try context.fetch(request)
+        } catch {
+            print("Failed to fetch user data: \(error.localizedDescription)")
+            return []
+        }
+    }
+    
+    func fetchUserData(withName userName: String) -> [UserData] {
+        let context = self.context
+        let request: NSFetchRequest<UserData> = UserData.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "name CONTAINS %@", userName)
         
         do {
             return try context.fetch(request)

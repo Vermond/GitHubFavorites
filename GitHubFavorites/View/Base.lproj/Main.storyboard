@@ -23,65 +23,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mlY-cS-LJe">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mlY-cS-LJe" customClass="SearchTextField" customModule="GitHubFavorites" customModuleProvider="target">
                                 <rect key="frame" x="20" y="92.666666666666671" width="353" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchPerson" destination="vhr-kL-GWY" eventType="editingDidEnd" id="LQ5-3L-WpB"/>
+                                </connections>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WFV-fg-OIH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WFV-fg-OIH">
                                 <rect key="frame" x="0.0" y="126.66666666666669" width="393" height="642.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleUserCell" rowHeight="100" id="IjI-L8-0OE" customClass="SimpleUserCell" customModule="GitHubFavorites" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SimpleUserCell" rowHeight="100" id="IjI-L8-0OE" customClass="SimpleUserCell" customModule="GitHubFavorites" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IjI-L8-0OE" id="M9i-vd-mXb">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nAU-oz-UWZ">
-                                                    <rect key="frame" x="10" y="10" width="80" height="80"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="KGu-tE-wzq"/>
-                                                        <constraint firstAttribute="width" secondItem="nAU-oz-UWZ" secondAttribute="height" multiplier="1:1" id="iTo-hu-vFa"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMD-8k-IPl" customClass="FavoriteButton" customModule="GitHubFavorites" customModuleProvider="target">
-                                                    <rect key="frame" x="283" y="10" width="100" height="80"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="FRD-T4-0yo"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2a-2g-PKm">
-                                                    <rect key="frame" x="100" y="10" width="173" height="80"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="AMD-8k-IPl" secondAttribute="bottom" constant="10" id="9Jo-XQ-rmJ"/>
-                                                <constraint firstItem="AMD-8k-IPl" firstAttribute="width" secondItem="M9i-vd-mXb" secondAttribute="height" multiplier="1:1" id="9j2-3Z-2q7"/>
-                                                <constraint firstAttribute="bottom" secondItem="p2a-2g-PKm" secondAttribute="bottom" constant="10" id="BUE-K8-wX3"/>
-                                                <constraint firstAttribute="bottom" secondItem="nAU-oz-UWZ" secondAttribute="bottom" constant="10" id="QbC-kQ-nEP"/>
-                                                <constraint firstItem="AMD-8k-IPl" firstAttribute="leading" secondItem="p2a-2g-PKm" secondAttribute="trailing" constant="10" id="Tf2-md-vZD"/>
-                                                <constraint firstItem="nAU-oz-UWZ" firstAttribute="top" secondItem="M9i-vd-mXb" secondAttribute="top" constant="10" id="e4U-Nv-xbA"/>
-                                                <constraint firstItem="p2a-2g-PKm" firstAttribute="leading" secondItem="nAU-oz-UWZ" secondAttribute="trailing" constant="10" id="ecG-yw-Qdb"/>
-                                                <constraint firstItem="nAU-oz-UWZ" firstAttribute="leading" secondItem="M9i-vd-mXb" secondAttribute="leading" constant="10" id="je2-d5-jcr"/>
-                                                <constraint firstItem="p2a-2g-PKm" firstAttribute="top" secondItem="M9i-vd-mXb" secondAttribute="top" constant="10" id="kpR-Kj-f1c"/>
-                                                <constraint firstAttribute="trailing" secondItem="AMD-8k-IPl" secondAttribute="trailing" constant="10" id="s41-eC-g5l"/>
-                                                <constraint firstItem="AMD-8k-IPl" firstAttribute="top" secondItem="M9i-vd-mXb" secondAttribute="top" constant="10" id="yvf-cN-kB5"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="favoriteButton" destination="AMD-8k-IPl" id="0cS-91-P20"/>
-                                            <outlet property="profileImage" destination="nAU-oz-UWZ" id="mdK-AO-UP0"/>
-                                            <outlet property="userNameLabel" destination="p2a-2g-PKm" id="Moi-EH-bzQ"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vhr-kL-GWY" id="KzW-K5-1G1"/>
+                                    <outlet property="delegate" destination="vhr-kL-GWY" id="y63-hx-x55"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z9c-bA-e2S"/>
@@ -134,54 +100,13 @@
                                 <rect key="frame" x="0.0" y="135.33333333333331" width="393" height="633.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleUserCell" rowHeight="100" id="No4-0P-dZP" customClass="SimpleUserCell" customModule="GitHubFavorites" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SimpleUserCell" rowHeight="100" id="No4-0P-dZP" customClass="SimpleUserCell" customModule="GitHubFavorites" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="No4-0P-dZP" id="i6Q-98-vtd">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="MZr-fV-ONz">
-                                                    <rect key="frame" x="10" y="10" width="80" height="80"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="Rqu-ZM-xWp"/>
-                                                        <constraint firstAttribute="width" secondItem="MZr-fV-ONz" secondAttribute="height" multiplier="1:1" id="i5I-ME-wb6"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brn-py-ktI" customClass="FavoriteButton" customModule="GitHubFavorites" customModuleProvider="target">
-                                                    <rect key="frame" x="283" y="10" width="100" height="80"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="aL9-9G-QYX"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIT-ab-xXg">
-                                                    <rect key="frame" x="100" y="10" width="173" height="80"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Brn-py-ktI" firstAttribute="leading" secondItem="gIT-ab-xXg" secondAttribute="trailing" constant="10" id="07c-Zd-rSD"/>
-                                                <constraint firstAttribute="bottom" secondItem="gIT-ab-xXg" secondAttribute="bottom" constant="10" id="3EU-Uo-8mf"/>
-                                                <constraint firstItem="Brn-py-ktI" firstAttribute="top" secondItem="i6Q-98-vtd" secondAttribute="top" constant="10" id="4Ay-uG-74B"/>
-                                                <constraint firstItem="gIT-ab-xXg" firstAttribute="leading" secondItem="MZr-fV-ONz" secondAttribute="trailing" constant="10" id="4cA-EV-uZl"/>
-                                                <constraint firstAttribute="bottom" secondItem="Brn-py-ktI" secondAttribute="bottom" constant="10" id="JBV-jR-ao8"/>
-                                                <constraint firstItem="Brn-py-ktI" firstAttribute="width" secondItem="i6Q-98-vtd" secondAttribute="height" multiplier="1:1" id="JUd-Cu-8oh"/>
-                                                <constraint firstItem="gIT-ab-xXg" firstAttribute="top" secondItem="i6Q-98-vtd" secondAttribute="top" constant="10" id="Oy5-mB-Ydl"/>
-                                                <constraint firstItem="MZr-fV-ONz" firstAttribute="leading" secondItem="i6Q-98-vtd" secondAttribute="leading" constant="10" id="bjJ-Ph-UiM"/>
-                                                <constraint firstItem="MZr-fV-ONz" firstAttribute="top" secondItem="i6Q-98-vtd" secondAttribute="top" constant="10" id="gaX-7e-9RS"/>
-                                                <constraint firstAttribute="trailing" secondItem="Brn-py-ktI" secondAttribute="trailing" constant="10" id="vVS-tI-NIu"/>
-                                                <constraint firstAttribute="bottom" secondItem="MZr-fV-ONz" secondAttribute="bottom" constant="10" id="zIw-uk-1cg"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="favoriteButton" destination="Brn-py-ktI" id="eWk-P7-QL4"/>
-                                            <outlet property="profileImage" destination="MZr-fV-ONz" id="iNp-Nt-uQt"/>
-                                            <outlet property="userNameLabel" destination="gIT-ab-xXg" id="IFm-aK-Egq"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

@@ -10,8 +10,9 @@ import UIKit
 
 class FavoriteButton: UIButton {
     @IBOutlet weak private var button: UIButton!
-    
-    private var isFavorited = false
+        
+    private(set) var isFavorited = false
+    private var onTapped: (() -> Void)? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,8 +35,16 @@ class FavoriteButton: UIButton {
         }
     }
     
-    @IBAction func toggleFavorite() {
-        isFavorited = !isFavorited
+    public func setOnTapped(_ handler: @escaping () -> Void) {
+        onTapped = handler
+    }
+    
+    @IBAction func tapped(_ sender: Any) {
+        onTapped?()
+    }
+    
+    public func setFavorite(to value: Bool) {
+        isFavorited = value
         
         button.setTitle(isFavorited ? "★" : "☆", for: .normal)
     }
