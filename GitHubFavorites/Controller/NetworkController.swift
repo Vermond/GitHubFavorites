@@ -10,11 +10,17 @@ import Foundation
 class NetworkController {
     public static let shared = NetworkController()
     
-    func fetchData(urlStr: String, completion: @escaping (Result<Data, Error>) -> Void) async {
+    func fetchData(urlStr: String, token: String, completion: @escaping (Result<Data, Error>) -> Void) async {
         guard let url = URL(string: urlStr) else {
             completion(.failure(NSError(domain: "Invalid URL", code: -1)))
             return
         }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         do {
             let (data, response) = try await URLSession.shared.data(from: url)

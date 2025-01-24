@@ -35,6 +35,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		740D61EC2D4325BB005CB2D3 /* Exceptions for "GitHubFavorites" folder in "GitHubFavoritesTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Config.xcconfig,
+			);
+			target = 74A182182D408121007AD804 /* GitHubFavoritesTests */;
+		};
+		740D61ED2D4325BB005CB2D3 /* Exceptions for "GitHubFavorites" folder in "GitHubFavoritesUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Config.xcconfig,
+			);
+			target = 74A182222D408121007AD804 /* GitHubFavoritesUITests */;
+		};
 		74A1822B2D408121007AD804 /* Exceptions for "GitHubFavorites" folder in "GitHubFavorites" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -49,6 +63,8 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				74A1822B2D408121007AD804 /* Exceptions for "GitHubFavorites" folder in "GitHubFavorites" target */,
+				740D61EC2D4325BB005CB2D3 /* Exceptions for "GitHubFavorites" folder in "GitHubFavoritesTests" target */,
+				740D61ED2D4325BB005CB2D3 /* Exceptions for "GitHubFavorites" folder in "GitHubFavoritesUITests" target */,
 			);
 			path = GitHubFavorites;
 			sourceTree = "<group>";
@@ -357,6 +373,8 @@
 		};
 		74A1822F2D408121007AD804 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 74A182022D40811F007AD804 /* GitHubFavorites */;
+			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -420,6 +438,8 @@
 		};
 		74A182302D408121007AD804 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 74A182022D40811F007AD804 /* GitHubFavorites */;
+			baseConfigurationReferenceRelativePath = Config.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

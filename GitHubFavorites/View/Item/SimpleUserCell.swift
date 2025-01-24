@@ -14,5 +14,7 @@ class SimpleUserCell: UITableViewCell {
     @IBOutlet weak var favoriteButton: UIButton!
     
     
-    
+    func setData(userName: String, imgPath: String) {
+        userNameLabel.text = userName
+    }
 }
